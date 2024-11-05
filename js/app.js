@@ -2,6 +2,9 @@ console.log("Email List");
 
 const emailDisplay = document.getElementById("email-display");
 
+const newEmailList = document.getElementById("new-email-list");
+
+
 function getEmailList() {
     let emailList = [];
     const ulEl = document.createElement("ul");
@@ -24,3 +27,9 @@ function getEmailList() {
 }
 
 getEmailList();
+
+newEmailList.addEventListener("click", function () {
+    emailDisplay.innerHTML = "";
+    getEmailList();
+})
+
