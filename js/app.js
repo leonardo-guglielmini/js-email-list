@@ -8,6 +8,7 @@ const newEmailList = document.getElementById("new-email-list");
 function getEmailList() {
     let emailList = [];
     const ulEl = document.createElement("ul");
+    ulEl.classList.add("list-group");
 
     for (let i = 0; i < 10; i++) {
         axios
@@ -16,6 +17,7 @@ function getEmailList() {
                 //console.log("Success", res, res.data);
                 emailList.push(res.data.response);
                 const liEl = document.createElement("li");
+                liEl.classList.add("list-group-item")
                 liEl.innerHTML = res.data.response;
                 ulEl.appendChild(liEl);
             })
